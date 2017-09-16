@@ -1,0 +1,71 @@
+{
+  "name": "cristianLueckeFitness",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "6.9.2"
+  },
+  "scripts": {
+    "start": "webpack && node ./src/server.js",
+    "test": "nyc mocha ./test/**/*-test.js",
+    "build": "webpack --watch",
+    "lint": "./node_modules/.bin/eslint *.js",
+    "server:dev": "nodemon ./src/server.js",
+    "create:db": "createdb WTUSABootCamp",
+    "drop:db": "dropdb WTUSABootCamp",
+    "migrate:db": "knex --knexfile ./src/models/db/knexfile.js migrate:latest",
+    "rollback:db": "knex --knexfile ./src/models/db/knexfile.js migrate:rollback",
+    "seed:db": "knex --knexfile ./src/models/db/knexfile.js seed:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhallman5/WTUSABootCamp.git"
+  },
+  "author": "John Hallman",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/jhallman5/WTUSABootCamp/issues"
+  },
+  "homepage": "https://github.com/jhallman5/WTUSABootCamp#readme",
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bookshelf": "^0.10.4",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "enzyme": "^2.9.1",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.3.0",
+    "express": "^4.15.4",
+    "isomorphic-fetch": "^2.2.1",
+    "knex": "^0.13.0",
+    "mocha": "^3.5.2",
+    "moment": "^2.18.1",
+    "nyc": "^11.2.1",
+    "pg": "^7.2.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^4.4.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5",
+    "webpack-notifier": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
