@@ -13,15 +13,7 @@ const Home = () => (
     <div className="column is-4">
       my feed
     </div>
-    <div className="column is-4">
-      <p><strong>Bench</strong></p>
-      <p>135 / 215 </p>
-      <p><strong>Squat</strong></p>
-      <p>135 / 215 </p>
-      <p><strong>Deadlift</strong></p>
-      <p>135 / 215 </p>
-      <div className="button is-info">Add PR</div>
-    </div>
+
   </div>
 );
 
