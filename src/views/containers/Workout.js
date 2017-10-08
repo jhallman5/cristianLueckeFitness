@@ -1,46 +1,34 @@
 /* eslint-disable */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Set from './Set.js';
+import Exercise from './Exercise.js';
 
-export default class Workout extends React.Component { // eslint-disable-line
+
+const mapStateToProps = state => {
+  return {exercises: state.exercises}
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+  }
+};
+
+class Workout extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
+    console.log( "=-=-=-> this.props", this.props.exercises)
     return (
-      <div className="columns">
-        <div className="column is-4">
-          <div className="level-left">
-            <div className="level-item">
-              <strong>Exercise &#62; </strong>
-            </div>
-          </div>
-          <div className="level-right">
-            <div className="level-item">
-              <i className="fa fa-pencil" aria-hidden="true" />
-            </div>
-          </div>
-          <div className="level">
-            <div className="level-item has-text-centered">
-            #
-            </div>
-            <div className="level-item has-text-centered">
-            PREVIOUS
-            </div>
-            <div className="level-item has-text-centered">
-            LBS
-            </div>
-            <div className="level-item has-text-centered">
-            REPS
-            </div>
-          </div>
-          <Set />
-          <div className="level">
-            <div className="level-item has-text-centered">
-              Add Set
-            </div>
-          </div>
-        </div>
+      <div>
+        {this.props.exercises.exercises.map((exercise, i ) => <Exercise key={i} /> )}
+        <Exercise />
+        <Exercise />
       </div>
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Workout);
