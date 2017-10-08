@@ -20,10 +20,7 @@ class Workout extends React.Component {
   render() {
     return (
       <div>
-        {this.props.exercises.exercises.map((exercise, i ) => {
-          console.log( "=-=-=-> i", i )
-        return <Exercise key={i} name={this.props.exercises.exercises[i]}/>
-      })}
+        {this.props.exercises.exercises.map((exercise, i ) => <Exercise key={i} name={this.props.exercises.exercises[i]}/>)}
       </div>
     );
   }
