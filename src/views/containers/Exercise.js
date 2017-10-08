@@ -4,14 +4,17 @@ import React, { Component } from 'react';
 
 import Set from './Set.js';
 
-export default class Exercise extends React.Component { // eslint-disable-line
+export default class Exercise extends React.Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
     return (
       <div className="columns">
         <div className="column is-4">
           <div className="level-left">
             <div className="level-item">
-              <strong>Exercise &#62; </strong>
+              <strong>{this.props.name} &#62; </strong>
             </div>
           </div>
           <div className="level-right">

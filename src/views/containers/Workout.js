@@ -16,16 +16,14 @@ const mapDispatchToProps = dispatch => {
 };
 
 class Workout extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+
   render() {
-    console.log( "=-=-=-> this.props", this.props.exercises)
     return (
       <div>
-        {this.props.exercises.exercises.map((exercise, i ) => <Exercise key={i} /> )}
-        <Exercise />
-        <Exercise />
+        {this.props.exercises.exercises.map((exercise, i ) => {
+          console.log( "=-=-=-> i", i )
+        return <Exercise key={i} name={this.props.exercises.exercises[i]}/>
+      })}
       </div>
     );
   }
